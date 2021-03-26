@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'product.apps.ProductConfig',
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'producthuntclone.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['producthuntclone/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,7 +78,7 @@ WSGI_APPLICATION = 'producthuntclone.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfoliodb',
+        'NAME': 'product_hunt_site',
         'USER': 'postgres',
         'PASSWORD': '12345678',
         'HOST': 'localhost',
@@ -120,5 +122,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR, 'producthuntclone/static/')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
