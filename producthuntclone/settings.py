@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'producthuntclone.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'product_hunt_site',
+        'NAME': 'producthuntdb',
         'USER': 'postgres',
         'PASSWORD': '12345678',
         'HOST': 'localhost',
